@@ -35,6 +35,10 @@ func _ready():
 		state.Player = self
 	prev_state = STATES.IDLE
 	current_state = STATES.IDLE
+	
+func _enter_tree():
+	MainInstances.player = self
+
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
@@ -44,6 +48,9 @@ func gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity_value * delta
 		
+
+func _exit_tree():
+	MainInstances.player = null
 
 func change_state(input_state):
 	if input_state != null:

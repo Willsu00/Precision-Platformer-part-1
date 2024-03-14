@@ -57,4 +57,3 @@ position = Vector2(9, -52)
 
 [node name="Enemy" parent="." instance=ExtResource("3_42fc6")]
 position = Vector2(-207, -140)
-player_path = NodePath("../Player")
